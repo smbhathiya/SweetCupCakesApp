@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User">
+
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/box_with_round_corner"
+        android:backgroundTint="@color/main_color"
+        android:text="@string/sign_out"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_orders"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/nav_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.998" />
+
+
+    <include layout="@layout/logo_second" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+
+    <!--cart-->
+    <ImageView
+        android:id="@+id/cart_icon"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toEndOf="@id/guideline_middle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972"
+        app:srcCompat="@drawable/icon_cart"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cart"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/cart_icon"
+        app:layout_constraintStart_toStartOf="@id/cart_icon"
+        app:layout_constraintTop_toBottomOf="@id/cart_icon" />
+
+    <Button
+        android:id="@+id/cart_icon_btn"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/guideline_middle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <!--home-->
+    <ImageView
+        android:id="@+id/home_icon"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_start"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975"
+        app:srcCompat="@drawable/icon_home" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/home_icon"
+        app:layout_constraintStart_toStartOf="@id/home_icon"
+        app:layout_constraintTop_toBottomOf="@id/home_icon" />
+
+    <Button
+        android:id="@+id/home_icon_btn"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <!--messages-->
+    <ImageView
+        android:id="@+id/message_icon"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/icon"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_middle"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973"
+        app:srcCompat="@drawable/icon_message"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/message"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/message_icon"
+        app:layout_constraintStart_toStartOf="@id/message_icon"
+        app:layout_constraintTop_toBottomOf="@id/message_icon" />
+
+    <Button
+        android:id="@+id/message_icon_btn"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_middle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <!--user-->
+
+    <ImageView
+        android:id="@+id/user_icon"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="5dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972"
+        app:srcCompat="@drawable/icon_user"
+        app:tint="@color/main_color"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user"
+        android:textColor="@color/main_color"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/user_icon"
+        app:layout_constraintStart_toStartOf="@id/user_icon"
+        app:layout_constraintTop_toBottomOf="@id/user_icon" />
+
+    <Button
+        android:id="@+id/user_icon_btn"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="292dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+
+    <View
+        android:id="@+id/user_container"
+        android:layout_width="340dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/box_with_round_corner"
+        android:backgroundTint="@color/light_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="73dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/user"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="@id/user_container"
+        app:layout_constraintTop_toTopOf="@id/user_container"
+        app:srcCompat="@drawable/icon_user"
+        app:tint="@color/main_color" />
+
+    <TextView
+        android:id="@+id/user_full_name"
+        android:layout_width="250dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/user"
+        android:textColor="@color/main_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/user_container"
+        app:layout_constraintTop_toTopOf="@id/user_container" />
+
+    <TextView
+        android:id="@+id/user_email_textview"
+        android:layout_width="249dp"
+        android:layout_height="26dp"
+        android:text="@string/email"
+        android:textColor="@color/text"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/user_container"
+        app:layout_constraintTop_toBottomOf="@id/user_full_name" />
+
+
+    <!-- Parent LinearLayout for aligning the three LinearLayouts in a row -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- LinearLayout for "Call Us" -->
+        <LinearLayout
+            android:id="@+id/call_us"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="26dp"
+            android:background="@drawable/box_with_round_corner"
+            android:backgroundTint="@color/border_color"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/call_icon"
+                app:tint="@color/main_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call Us"
+                android:textColor="@color/main_color"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <!-- LinearLayout for "Message Us" -->
+        <LinearLayout
+            android:id="@+id/message_us"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/box_with_round_corner"
+            android:backgroundTint="@color/border_color"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/message_icon"
+                app:tint="@color/main_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message Us"
+                android:textColor="@color/main_color"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <!-- LinearLayout for "Email Us" -->
+        <LinearLayout
+            android:id="@+id/email_us"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="26dp"
+            android:background="@drawable/box_with_round_corner"
+            android:backgroundTint="@color/border_color"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/email_icon"
+                app:tint="@color/main_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email Us"
+                android:textColor="@color/main_color"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- LinearLayout for "View Orders" -->
+    <LinearLayout
+        android:id="@+id/view_orders"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/box_with_round_corner"
+        android:backgroundTint="@color/border_color"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/order_icon"
+            app:tint="@color/main_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Orders"
+            android:textColor="@color/main_color"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

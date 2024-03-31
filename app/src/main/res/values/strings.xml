@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Sweet CupCakes</string>
+    <string name="enter_email">Enter your Email</string>
+    <string name="enter_password">Enter your Password</string>
+    <string name="login">LOGIN</string>
+    <string name="logo">LOGO</string>
+    <string name="forgot_password"><u>Forgotten Password?</u></string>
+    <string name="no_account"><u>Don\'t have an Account?</u></string>
+    <string name="have_account"><u>Already have an Account?</u></string>
+
+    <string name="q_name">What\'s your name?</string>
+    <string name="q_name_des">Enter your real name here. This is use for order delivery purpose</string>
+    <string name="f_name">First Name</string>
+    <string name="l_name">Last Name</string>
+
+    <string name="next">Next</string>
+
+    <string name="search">Search</string>
+
+    <string name="q_email">What\'s your Email address?</string>
+    <string name="q_email_des">Enter your correct email address here for communication such as order conformation and updates</string>
+    <string name="email">Email</string>
+
+    <string name="q_password">Create a password</string>
+    <string name="q_password_des">Create a strong password to secure your account and ensure privacy</string>
+    <string name="password">Password</string>
+    <string name="password_con">Conform Password</string>
+
+    <string name="q_contact_no_des">Add a correct contact number for order conformation and communication purpose</string>
+    <string name="contact_no">Contact Number</string>
+    <string name="sign_up">sign up</string>
+    <string name="cart">Cart</string>
+    <string name="home">Home</string>
+    <string name="message">Message</string>
+    <string name="user">User</string>
+    <string name="address">Address</string>
+    <string name="address_des">Enter your current address for product delivery purpose</string>
+    <string name="enter_your_address">Enter your Address</string>
+    <string name="sign_out">Sign out</string>
+    <string name="add">ADD</string>
+    <string name="mange_cupcakes">MANGE CUPCAKES</string>
+    <string name="admin">Admin</string>
+    <string name="orders_hisotry">ORDERS HISOTRY</string>
+    <string name="manage_category">Manage Category</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_price">Item Price</string>
+    <string name="item_descrition">Item Descrition</string>
+    <string name="quantity">Quantity</string>
+
+</resources>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User">
+
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="340dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/box_with_round_corner"
+        android:backgroundTint="@color/main_color"
+        android:text="@string/sign_out"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_category" />
+
+    <Button
+        android:id="@+id/manage_orders"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/box_with_round_corner"
+        android:backgroundTint="@color/icon"
+        android:text="MANGE ORDERS"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_cupcakes"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/orders_history"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/box_with_round_corner"
+        android:backgroundTint="@color/box"
+        android:text="@string/orders_hisotry"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_orders" />
+
+    <Button
+        android:id="@+id/add_category"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/box_with_round_corner"
+        android:backgroundTint="@color/box"
+        android:text="ADD CATEGORY"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orders_history"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/manage_cupcakes"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="280dp"
+        android:background="@drawable/box_with_round_corner"
+        android:backgroundTint="@color/icon"
+        android:text="@string/mange_cupcakes"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/nav_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.998" />
+
+
+
+    <include layout="@layout/logo_second" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+
+    <View
+        android:id="@+id/user_container"
+        android:layout_width="340dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="128dp"
+        android:backgroundTint="@color/light_bg"
+        android:background="@drawable/box_with_round_corner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_height="68dp"
+        android:contentDescription="@string/user"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/user_full_name"
+        app:layout_constraintEnd_toEndOf="@+id/user_container"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/user_container"
+        app:layout_constraintTop_toTopOf="@id/user_container"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_user"
+        app:tint="@color/main_color" />
+
+    <TextView
+        android:id="@+id/user_full_name"
+        android:layout_width="175dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/admin"
+        android:textAlignment="center"
+        android:textColor="@color/main_color"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/user_container"
+        app:layout_constraintEnd_toEndOf="@id/user_container"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/user_container"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/cupcakes"
+        android:layout_width="175dp"
+        android:layout_height="23dp"
+        android:layout_marginBottom="4dp"
+        android:text="Sweet Cupcakes"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/user_container"
+        app:layout_constraintEnd_toEndOf="@id/user_container"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/user_container"
+        tools:ignore="TextSizeCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

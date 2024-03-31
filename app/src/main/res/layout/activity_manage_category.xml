@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ManageCategory">
+
+    <include layout="@layout/logo_second" />
+
+
+    <EditText
+        android:id="@+id/category_name"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_margin="0dp"
+        android:autofillHints="name"
+        android:background="@drawable/rounded_border"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="Category Name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingStart="10dp"
+        android:textColorHint="#494949"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.305"
+        tools:ignore="HardcodedText,LabelFor,MissingConstraints,RtlSymmetry,TextFields" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/delete_category"
+        android:layout_width="144dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="312dp"
+        android:background="@drawable/rounded_button_bg"
+        android:backgroundTint="@color/errorColor"
+        android:text="DELETE"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck,HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_category"
+        android:layout_width="144dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="312dp"
+        android:background="@drawable/rounded_button_bg"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/add"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.851"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:text="@string/manage_category"
+        android:textColor="@color/icon"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
