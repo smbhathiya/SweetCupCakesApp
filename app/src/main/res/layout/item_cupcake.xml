@@ -1,0 +1,65 @@
+<!-- item_layout.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+
+    android:layout_height="wrap_content">
+
+    <!-- Card item design -->
+    <View
+        android:id="@+id/item_container"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:background="@drawable/box_with_round_corner"
+        android:backgroundTint="@color/light_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintHeight_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="@+id/item_container"
+        app:layout_constraintStart_toStartOf="@+id/item_container"
+        app:layout_constraintTop_toTopOf="@+id/item_container"
+        app:srcCompat="@drawable/image"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/item_name"
+        android:textColor="#455A64"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/item_container"
+        app:layout_constraintStart_toStartOf="@+id/item_container"
+        app:layout_constraintTop_toBottomOf="@+id/item_image" />
+
+    <TextView
+        android:id="@+id/item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/item_price"
+        android:textColor="@color/main_color"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/item_name"
+        app:layout_constraintStart_toStartOf="@+id/item_container"
+        app:layout_constraintEnd_toEndOf="@+id/item_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
