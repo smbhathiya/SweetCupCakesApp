@@ -1,15 +1,12 @@
 package com.example.sweetcupcakes;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,9 +24,8 @@ public class User extends AppCompatActivity {
     LinearLayout callUs;
     LinearLayout messageUs;
     LinearLayout emailUs;
-    LinearLayout viewOrders;
 
-        @Override
+    @Override
         protected void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_user);
@@ -135,12 +131,9 @@ public class User extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Logout");
         builder.setMessage("Are you sure you want to logout?");
-        builder.setPositiveButton("Logout", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // Call logout method
-                logout();
-            }
+        builder.setPositiveButton("Logout", (dialog, which) -> {
+            // Call logout method
+            logout();
         });
         builder.setNegativeButton("Cancel", null);
         builder.show();

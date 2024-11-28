@@ -1,20 +1,17 @@
 package com.example.sweetcupcakes;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 
 public class PasswordReset extends AppCompatActivity {
@@ -36,39 +33,33 @@ public class PasswordReset extends AppCompatActivity {
         progressDialog.setMessage("Sending reset email...");
         progressDialog.setCancelable(false);
 
-        resetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Get the email entered by the user
-                String email = emailToResetPassword.getText().toString().trim();
+        resetPassword.setOnClickListener(v -> {
+            // Get the email entered by the user
+            String email = emailToResetPassword.getText().toString().trim();
 
-                // Check if email is empty
-                if (TextUtils.isEmpty(email)) {
-                    emailToResetPassword.setError("Enter your email");
-                    return;
-                }
-
-                // Show progress dialog
-                progressDialog.show();
-
-                // Send password reset email
-                FirebaseAuth.getInstance().sendPasswordResetEmail(email)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(Task<Void> task) {
-                                // Dismiss progress dialog
-                                progressDialog.dismiss();
-
-                                if (task.isSuccessful()) {
-                                    // Password reset email sent successfully
-                                    showResetSuccessDialog();
-                                } else {
-                                    // Failed to send password reset email
-                                    Toast.makeText(PasswordReset.this, "Failed to send password reset email", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+            // Check if email is empty
+            if (TextUtils.isEmpty(email)) {
+                emailToResetPassword.setError("Enter your email");
+                return;
             }
+
+            // Show progress dialog
+            progressDialog.show();
+
+            // Send password reset email
+            FirebaseAuth.getInstance().sendPasswordResetEmail(email)
+                    .addOnCompleteListener(task -> {
+                        // Dismiss progress dialog
+                        progressDialog.dismiss();
+
+                        if (task.isSuccessful()) {
+                            // Password reset email sent successfully
+                            showResetSuccessDialog();
+                        } else {
+                            // Failed to send password reset email
+                            Toast.makeText(PasswordReset.this, "Failed to send password reset email", Toast.LENGTH_SHORT).show();
+                        }
+                    });
         });
     }
 

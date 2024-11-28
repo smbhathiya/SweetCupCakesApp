@@ -1,10 +1,5 @@
 package com.example.sweetcupcakes;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,19 +8,20 @@ import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,10 +30,10 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ManageCupcakes extends AppCompatActivity {
     ImageView cupcakeImage;
@@ -105,20 +101,17 @@ public class ManageCupcakes extends AppCompatActivity {
 
 
         // Set up the editor action listener for the search field
-        searchItem.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH ||
-                        (event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
-                    // Perform the search operation
-                    String itemNameToSearch = searchItem.getText().toString().trim();
-                    if (!TextUtils.isEmpty(itemNameToSearch)) {
-                        searchItem(itemNameToSearch);
-                        return true; // Consume the event
-                    }
+        searchItem.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+                    (event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                // Perform the search operation
+                String itemNameToSearch = searchItem.getText().toString().trim();
+                if (!TextUtils.isEmpty(itemNameToSearch)) {
+                    searchItem(itemNameToSearch);
+                    return true; // Consume the event
                 }
-                return false;
             }
+            return false;
         });
     }
 
@@ -189,7 +182,7 @@ public class ManageCupcakes extends AppCompatActivity {
         String cupcakeId = databaseReference.push().getKey();
 
         // Set the Cupcake data in the database with the automatically generated ID
-        databaseReference.child(cupcakeId).setValue(cupcakeMap)
+        databaseReference.child(Objects.requireNonNull(cupcakeId)).setValue(cupcakeMap)
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(this, "Cupcake added successfully", Toast.LENGTH_SHORT).show();
                     // Clear all EditText fields and set them to defaults after successful save

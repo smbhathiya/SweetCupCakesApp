@@ -1,13 +1,17 @@
 package com.example.sweetcupcakes;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
+
+import java.util.Objects;
 
 public class ViewItem extends AppCompatActivity {
     TextView quantityText;
@@ -47,7 +51,7 @@ public class ViewItem extends AppCompatActivity {
         String imageUrlExtra = getIntent().getStringExtra("item_image_url");
 
         // Parse item price to double
-        pricePerItem = Double.parseDouble(itemPriceExtra);
+        pricePerItem = Double.parseDouble(Objects.requireNonNull(itemPriceExtra));
 
         // Set item details to views
         itemName.setText(itemNameExtra);
@@ -62,30 +66,24 @@ public class ViewItem extends AppCompatActivity {
                 .into(itemImage);
 
         // Set onClickListener for increase button
-        increaseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Increment quantity by one
-                quantity++;
+        increaseButton.setOnClickListener(v -> {
+            // Increment quantity by one
+            quantity++;
+            // Update TextView to display new quantity
+            quantityText.setText(String.valueOf(quantity));
+            // Update total price
+            updateTotalPrice();
+        });
+
+        // Set onClickListener for decrease button
+        decreaseButton.setOnClickListener(v -> {
+            // Decrement quantity by one if it's greater than 1
+            if (quantity > 1) {
+                quantity--;
                 // Update TextView to display new quantity
                 quantityText.setText(String.valueOf(quantity));
                 // Update total price
                 updateTotalPrice();
-            }
-        });
-
-        // Set onClickListener for decrease button
-        decreaseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Decrement quantity by one if it's greater than 1
-                if (quantity > 1) {
-                    quantity--;
-                    // Update TextView to display new quantity
-                    quantityText.setText(String.valueOf(quantity));
-                    // Update total price
-                    updateTotalPrice();
-                }
             }
         });
 
@@ -94,6 +92,7 @@ public class ViewItem extends AppCompatActivity {
     }
 
     // Method to update total price based on quantity
+    @SuppressLint("DefaultLocale")
     private void updateTotalPrice() {
         double total = quantity * pricePerItem;
         totalPrice.setText(String.format(" Rs.%.2f", total));

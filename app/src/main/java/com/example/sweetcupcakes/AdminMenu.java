@@ -1,16 +1,15 @@
 package com.example.sweetcupcakes;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminMenu extends AppCompatActivity {
     Button manageCupcakes;
@@ -57,12 +56,9 @@ public class AdminMenu extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Logout");
         builder.setMessage("Are you sure you want to logout?");
-        builder.setPositiveButton("Logout", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // Call logout method
-                logout();
-            }
+        builder.setPositiveButton("Logout", (dialog, which) -> {
+            // Call logout method
+            logout();
         });
         builder.setNegativeButton("Cancel", null);
         builder.show();

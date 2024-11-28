@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CupcakeAdapter extends RecyclerView.Adapter<CupcakeAdapter.ViewHolder> {
 
-    private List<Cupcake> cupcakesList;
+    private final List<Cupcake> cupcakesList;
 
     public CupcakeAdapter(List<Cupcake> cupcakesList) {
         this.cupcakesList = cupcakesList;
@@ -37,7 +37,7 @@ public class CupcakeAdapter extends RecyclerView.Adapter<CupcakeAdapter.ViewHold
         return cupcakesList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
         TextView nameTextView;
